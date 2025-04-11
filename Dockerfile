@@ -12,9 +12,9 @@ WORKDIR /app
 
 # パッケージのインストール
 COPY . /app
-# RUN rm -rf package-lock.json node_module
-# RUN meteor npm i
-# RUN meteor npm install dotenv
+
+# Meteor npm install を実行
+RUN meteor npm install
 
 # ポートを開放
 EXPOSE 3000
