@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.27.0",
+    "db-migrate": "^0.11.14",
+    "db-migrate-mysql": "^3.0.0",
     "meteor-node-stubs": "^1.2.12",
     "mysql2": "^3.14.0",
     "vue": "^3.3.9",

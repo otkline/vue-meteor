@@ -1,13 +1,15 @@
 # Meteor + Vue3 + Vite
 
-This is a simple example of how to use Vue3 with Meteor.
-
 ## How to use
 
 1. Clone this repo
-2. Run `meteor npm install`
-3. Run `meteor`
-4. Open `http://localhost:3000` in your browser
+2. `docker compose build`
+  （初回のみ）
+3. `docker compose up`
+4. 必要に応じてマイグレーション実行 `npx db-migrate up --config database.js`
+   `.env_sample` をコピーし `.env` を作成する。
+   DBの接続情報を記述する。`.env` はgit管理外
+5. `http://localhost:3000`
 
 ## Libraries used
 

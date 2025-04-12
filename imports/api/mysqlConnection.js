@@ -1,16 +1,20 @@
+import path from 'path'
+import { fileURLToPath } from 'url'
 import dotenv from 'dotenv'
 import mysql from 'mysql2/promise'
 
-dotenv.config(); // .envファイル DB接続情報を読み込む
-
+// .envファイル DB接続情報を読み込む
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+dotenv.config({ path: path.resolve(__dirname, '../../.env') }) 
 export class DB {
     constructor() {
         if (!DB.instance) {
             this.connection = mysql.createPool({
-                host: process.env.MYSQL_HOST || 'mysql',
-                user: process.env.MYSQL_USER || 'user',
-                password: process.env.MYSQL_PASSWORD || 'password',
-                database: process.env.MYSQL_DATABASE || 'meteor_db',
+                host: process.env.DB_HOST,
+                user: process.env.DB_USER,
+                password: process.env.DB_PASSWORD,
+                database: process.env.DB_NAME,
                 waitForConnections: true,
                 connectionLimit: 30,
                 queueLimit: 0
