@@ -20,4 +20,4 @@ RUN meteor npm install
 EXPOSE 3000
 
 # アプリを起動
-CMD ["meteor", "run", "--port", "3000"]
+CMD ["meteor", "run", "--port", "3000", "--exclude-archs", "web.browser.legacy"]
